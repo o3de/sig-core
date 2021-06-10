@@ -1,10 +1,9 @@
 ---
 name: RFC Feature request
 about: Create Feature RFC for this project
-title: Proposed RFC Feature: =description=
-labels: 'rfc-feature'
+title: Proposed RFC Feature: description
+labels: rfc-feature
 assignees: ''
-
 ---
 
 # O3DE RFC Feature Template
@@ -49,7 +48,6 @@ Why is this important? What are the use cases? What will it do once completed?
 - This section should relate to the feature design description by reference and explain in greater detail how it makes the feature design examples work.
 
 - This should also provide detailed information on compatibility with different hardware platforms.
-
 
 ### What are the advantages of the feature?
 - Explain the advantages for someone to use this feature

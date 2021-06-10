@@ -1,7 +1,7 @@
 ---
 name: 'Meeting Agenda: Create New'
 about: Use this template to create a new meeting agenda.
-title: Proposed SIG-'name' meeting agenda for MMMM-DD-YY
+title: Proposed SIG-Core meeting agenda for MMMM-DD-YY
 labels: mtg-agenda
 assignees: ''
 
@@ -10,7 +10,7 @@ assignees: ''
 ## Meeting Details
 
 - **Date/Time:** Month Date, Year @ XX:XXpm UTC / XX:XXpm ET
-- **Location:** [Discord SIG Voice Room](https://discord.gg/WtmTC6erDP)
+- **Location:** [Discord SIG-Core Voice Room](https://discord.gg/WtmTC6erDP)
 - **Moderator:** TBA
 - **Note Taker** Person
 

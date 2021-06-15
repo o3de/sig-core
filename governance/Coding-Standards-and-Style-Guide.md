@@ -76,7 +76,6 @@ Click here to expand...
     *   10.6[11.6. Private members need love too](#CodingStandardsandStyleGuide-Privatemembersneedlovetoo)
     *   10.7[11.7. Redundant documentation is redundant](#CodingStandardsandStyleGuide-Redundantdocumentationisredundant)
     *   10.8[11.8. TODO comments](#CodingStandardsandStyleGuide-TODOcomments)
-    *   10.9[11.9. JIRA Ticket numbers or URLS, or email addresses](#CodingStandardsandStyleGuide-JIRATicketnumbersorURLS,oremailaddresses)
 
 This style guide does not, and possibly cannot, cover every possible coding situation. If you have something that you think should, or should not, be in the standard please [bring it up with ly-tech@ for discussion](mailto:ly-tech@amazon.com). It's up to everyone to make sure that this document remains accurate and useful!
 
@@ -1381,21 +1380,19 @@ The only actual difference between class and struct is the default visibility of
 
 _**Currently supported platforms**_
 
-*   Windows PC x64 (Windows 7+, 4+ GB memory, 2+GB video memory, DX11+)
-*   XBox One
-*   Playstation 4
-*   iOS (A8 processors iOS version 8+)
-*   Android (device supports OpenGL ES 3.1 and Android API 19+)
-*   OSX (Yosemite+)
+*   Windows PC x64 (Windows 10, 8+ GB memory, 4+GB video memory, DX12, & Vulkan)
+*   iOS (A11 processors, iOS version 13+)
+*   Android (device supports Vulkan, API 24) - TBD
+*   MacOS (10.15 (Catalina) +)
 *   Linux
 *   Apple TV    
 
 8.1. Code
 ---------
 
-**Required**: All platform specific code needs to be implemented according to the patterns defined by the PAL effort (Platform Abstraction Layer). Please see the documentation [here](https://wiki.agscollab.com/display/lmbr/Platform+Abstraction+Layer), or contact the [team ly-pal@amazon.com](mailto:team ly-pal@amazon.com) with any questions.
+**Required**: All platform specific code needs to be implemented according to the patterns defined by the PAL effort (Platform Abstraction Layer). 
 
-**Avoid adding new #ifdef AZ\_PLATFORM\_XXX defines to the codebase, this is no longer how we implement platform specific code.**
+**Avoid adding platform specific defines to the codebase.**
 
 9\. File Structure/Contents
 ===========================
@@ -1729,7 +1726,7 @@ We use [Doxygen](http://www.stack.nl/~dimitri/doxygen/index.html) markup when 
 11.3. Leave your feelings out of it
 -----------------------------------
 
-**Recommended: **Write your comments in an objective style; be free of emotion, conjecture and machinations. It is usually never appropriate to add an exclamation mark ![(warning)](https://wiki.agscollab.com/s/en_GB/7502/731bcdd939f0067a3db1ba161d5fdbacc62c7613/_/images/icons/emoticons/warning.png "(warning)"), if you're shouting in your comments you're probably emotional ![(smile)](https://wiki.agscollab.com/s/en_GB/7502/731bcdd939f0067a3db1ba161d5fdbacc62c7613/_/images/icons/emoticons/smile.png "(smile)")
+**Recommended: **Write your comments in an objective style; be free of emotion, conjecture and machinations. It is usually never appropriate to add an exclamation mark, if you're shouting in your comments you're probably emotional.
 
 11.4. Use non-gendered pronouns
 -------------------------------
@@ -1772,11 +1769,4 @@ See [https://chromium.googlesource.com/chromium/src/+/master/styleguide/gender\
 11.8. TODO comments
 -------------------
 
-**Recommended**: Generally TODO is not very useful in code, unless it's an assert. Do not leave TODO-like messages in comments, use JIRA instead, the presence of TODOS could be interpreted as promises to deliver something.  Describe what the code is now, not what it used to be or what it will be. 
-
-11.9. JIRA Ticket numbers or URLS, or email addresses
------------------------------------------------------
-
-**Required**:  Do not include full urls to amazon resources (for example, this wiki, JIRA, P4 servers, quip documents, etc) or usernames or email addresses of amazon employees in the code.  The public does not have access to our ticketing system, so avoid including JIRA ticket numbers either, except in the case of using the LUMBERYARD\_DEPRECATED text (see [API Deprecation](/display/lmbr/API+Deprecation) ).
-
-Please do not comment on this page; comments will be removed. Please send feedback to [ly-tech@amazon.com](mailto:ly-tech@amazon.com) so that it can be added to the discussion backlog and properly responded to.
+**Recommended**: Generally TODO is not very useful in code, unless it's an assert. Do not leave TODO-like messages in comments, use Github issues instead, the presence of TODOS could be interpreted as promises to deliver something.  Describe what the code is now, not what it used to be or what it will be. 

@@ -132,7 +132,7 @@ For reference purposes C++17 feature support information can be found here:
 4\. Formatting
 ==============
 
-Rather than specify detailed formatting guidelines in this document we are using a code formatting tool (Clang-format) that converts code to the desired formatting.  See the .clang-format file at the root of the reopsitory.
+Rather than specify detailed formatting guidelines in this document we are using a code formatting tool (Clang-format) that converts code to the desired formatting.  See the .clang-format file at the root of the repository.
 
 4.1. Use four spaces for indentation
 ------------------------------------

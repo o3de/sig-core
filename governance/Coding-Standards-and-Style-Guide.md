@@ -77,7 +77,7 @@ Click here to expand...
     *   10.7[11.7. Redundant documentation is redundant](#CodingStandardsandStyleGuide-Redundantdocumentationisredundant)
     *   10.8[11.8. TODO comments](#CodingStandardsandStyleGuide-TODOcomments)
 
-This style guide does not, and possibly cannot, cover every possible coding situation. If you have something that you think should, or should not, be in the standard please [bring it up with ly-tech@ for discussion](mailto:ly-tech@amazon.com). It's up to everyone to make sure that this document remains accurate and useful!
+This style guide does not, and possibly cannot, cover every possible coding situation. If you have something that you think should, or should not, be in the standard please [bring it up with sig-core in the discord channel for discussion](https://discord.gg/fZ7CDwDxrh). It's up to everyone to make sure that this document remains accurate and useful!
 
 Legacy and Existing Code
 
@@ -96,7 +96,7 @@ A common style is good for everyone because consistency makes code easier to rea
 
 The document is divided into sections based on high-level C++ language features, with sub-sections to discuss more specific syntax and style issues. Statements marked  **_Required_**should always be adhered to. Statements marked  **_Recommended_**should be adhered to unless doing so would be detrimental to the code for some technical reason (i.e. beyond personal preference). Statements marked  _**Reason**_exist for some entries to clarify intent and explain contentious or non-obvious decisions.
 
-In common with many standards documents, e.g. ISO C++, all inline examples are provided for illustrative and informational purposes, and are not considered normative. This means that in any situation where an example appears to contradict the written standard or is otherwise ambiguous, the text of the standard always take precedence. Readers should [bring any issues up with ly-tech@ for discussion](mailto:ly-tech@amazon.com).
+In common with many standards documents, e.g. ISO C++, all inline examples are provided for illustrative and informational purposes, and are not considered normative. This means that in any situation where an example appears to contradict the written standard or is otherwise ambiguous, the text of the standard always take precedence. Readers should [bring any issues up with the sig-core group in Discord](https://discord.gg/fZ7CDwDxrh).
 
 **Some choices are arbitrary, but still matter**
 
@@ -104,7 +104,7 @@ Some of the style choices described in this document are motivated by safety or 
 
 **Some things are not covered**
 
-If you encounter something that is not covered you will need to use your best judgment; a safe approach is generally to do as the existing code does. For further clarification you can always [bring it up with ly-tech@ for discussion](mailto:ly-tech@amazon.com).
+If you encounter something that is not covered you will need to use your best judgment; a safe approach is generally to do as the existing code does. For further clarification you can always [bring it up with with sig-core in the Discord channel](https://discord.gg/fZ7CDwDxrh).
 
 3\. Compiler compatibility
 ==========================
@@ -132,7 +132,7 @@ For reference purposes C++17 feature support information can be found here:
 4\. Formatting
 ==============
 
-Rather than specify detailed formatting guidelines in this document we are using a code formatting tool (Uncrustify) that converts code to the desired formatting. See this document for details of how to use it: [Using Uncrustify to beautify Lumberyard code](/display/lmbr/Using+Uncrustify+to+beautify+Lumberyard+code)
+Rather than specify detailed formatting guidelines in this document we are using a code formatting tool (Clang-format) that converts code to the desired formatting.  See the .clang-format file at the root of the reopsitory.
 
 4.1. Use four spaces for indentation
 ------------------------------------
@@ -804,7 +804,7 @@ NOTE: This includes RPCs or public functors on a structure. These are supposed t
 **Example**:
 
 ```
-    namespace Amazon
+    namespace O3DE
 ```
 
 ```
@@ -816,7 +816,7 @@ NOTE: This includes RPCs or public functors on a structure. These are supposed t
 ```
 
 ```
-    } // namespace Amazon <-- to help identify end braces, especially when you can't see the namespace opening
+    } // namespace O3DE <-- to help identify end braces, especially when you can't see the namespace opening
 ```
 
 4.19. Enums
@@ -1008,7 +1008,7 @@ In order to maintain readability, we acknowledge that we must allow for some exc
 
 **When implementing well established standards like the STL, we adopt their conventions**. For example when you use or extend std, follow all the usual STL naming conventions like lower case function names.
 
-**Allowances are made when working directly with middleware.** Although we do recommend that you wrap all middleware with a more Lumberyard-like interface, it _is_ ok to follow the middleware conventions within the code that directly interacts with it. For example, using the Havok "hk" prefix for class names that implement Havok interfaces is ok. As is naming functions inside those classes with lower case initials.
+**Allowances are made when working directly with middleware.** Although we do recommend that you wrap all middleware with a more O3DE-like interface, it _is_ ok to follow the middleware conventions within the code that directly interacts with it. For example, using the Havok "hk" prefix for class names that implement Havok interfaces is ok. As is naming functions inside those classes with lower case initials.
 
 At present, we recognize no other exceptions. If you think one should be added, please raise it for discussion.
 
@@ -1402,8 +1402,8 @@ Within Gems: [Gems System Documentation](/display/lmbr/Gems+System+Documentatio
 9.1. Copyright Header Requirements
 ----------------------------------
 
-**Required: **For non-3rd Party source files that are apart of the Lumberyard project, they are required to carry the copyright notice detailed on the [Copyright Header Requirements](/display/lmbr/Copyright+Header+Requirements) page.  
-When adding a new source file or modifying any existing Lumberyard source file without a copyright please add the following copyright notice to the top of the file.
+**Required: **For non-3rd Party source files that are apart of the O3DE project, they are required to carry the copyright notice detailed on the [Copyright Header Requirements](/display/lmbr/Copyright+Header+Requirements) page.  
+When adding a new source file or modifying any existing O3DE source file without a copyright please add the following copyright notice to the top of the file.
 
 **Every non 3rd Party source file** Expand source
 
@@ -1411,27 +1411,19 @@ When adding a new source file or modifying any existing Lumberyard source file w
 
 `/*`
 
-`* All or portions of this file Copyright (c) Amazon.com, Inc. or its affiliates or`
+`* Copyright (c) Contributors to the Open 3D Engine Project.`
 
-`* its licensors.`
+`* For complete copyright and license terms please see the LICENSE at the root of this distribution.`
 
 `*`
 
-`* For complete copyright and license terms please see the LICENSE at the root of this`
-
-`* distribution (the "License"). All use of this software is governed by the License,`
-
-`* or, if provided, by the license below or the license accompanying this file. Do not`
-
-`* remove or modify any license notices. This file is distributed on an "AS IS" BASIS,`
-
-`* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.`
+`* SPDX-License-Identifier: Apache-2.0 OR MIT`
 
 `*`
 
 `*/`
 
-**Required:** For non-Lumberyard source code files outside of 3rd Party that we have made modifications please follow the steps in the Special Cases section of the [Copyright Header Requirements](/display/lmbr/Copyright+Header+Requirements#CopyrightHeaderRequirements-Specialcases) document
+**Required:** For non-O3DE source code files outside of 3rd Party that we have made modifications please follow the steps in the Special Cases section of the [Copyright Header Requirements](/display/lmbr/Copyright+Header+Requirements#CopyrightHeaderRequirements-Specialcases) document
 
 9.2. API definitions:
 ---------------------
@@ -1644,7 +1636,7 @@ For tools or platform specific code (like WinRT), feel free to utilize them.
 10.5. RTTI
 ----------
 
-**Required**: Do _NOT_ use it. None of the Lumberyard Engine projects enables RTTI.
+**Required**: Do _NOT_ use it.
 
 **Recommended**: Where you do need runtime type information, use AZ\_RTTI instead; a faster, lightweight type system with a variety of templated tools. See <AZCore/Rtti/Rtti.h>
 

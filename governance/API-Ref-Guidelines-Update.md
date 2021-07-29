@@ -1,44 +1,32 @@
-# API Ref Guidelines
+# API Ref Guidelines <!-- omit in toc -->
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
-- [API Ref Guidelines](#api-ref-guidelines)
-  - [Table of Contents](#table-of-contents)
-  - [Scope](#scope)
-  - [Who is the customer?](#who-is-the-customer)
-  - [How much documentation should I add?](#how-much-documentation-should-i-add)
-  - [Can I exclude code from being included in the documentation?](#can-i-exclude-code-from-being-included-in-the-documentation)
-  - [How should I format my code comments?](#how-should-i-format-my-code-comments)
-    - [General Style](#general-style)
-      - [Gotchas](#gotchas)
-      - [Example comments](#example-comments)
-    - [Classes and Structures](#classes-and-structures)
-      - [Classes and Structures examples](#classes-and-structures-examples)
-    - [Member Data](#member-data)
-      - [Member Data Examples](#member-data-examples)
-    - [Functions and Function Parameters](#functions-and-function-parameters)
-      - [Functions and Function Parameters examples](#functions-and-function-parameters-examples)
-      - [Example of redundant information (**don't do this**)](#example-of-redundant-information-dont-do-this)
-    - [Macros](#macros)
-      - [Macro examples](#macro-examples)
-    - [Enumerations](#enumerations)
-      - [Enumeration examples](#enumeration-examples)
-    - [Namespaces](#namespaces)
-      - [Namespace examples](#namespace-examples)
-    - [Header files](#header-files)
-      - [Header file examples](#header-file-examples)
-    - [Deprecations](#deprecations)
-    - [Complete Example](#complete-example)
-  - [Extras](#extras)
-    - [Linking to other APIs](#linking-to-other-apis)
-    - [Linking to Other Guides and Sites](#linking-to-other-guides-and-sites)
-    - [See Also](#see-also)
-    - [Notes](#notes)
-    - [Code Snippets](#code-snippets)
-    - [Section Comments](#section-comments)
-  - [Excluding code from the documentation](#excluding-code-from-the-documentation)
-  - [Exceptions](#exceptions)
-  - [As an SDE, can I build the documentation to see the final result?](#as-an-sde-can-i-build-the-documentation-to-see-the-final-result)
+- [Scope](#scope)
+- [Who is the customer?](#who-is-the-customer)
+- [How much documentation should I add?](#how-much-documentation-should-i-add)
+- [Can I exclude code from being included in the documentation?](#can-i-exclude-code-from-being-included-in-the-documentation)
+- [How should I format my code comments?](#how-should-i-format-my-code-comments)
+  - [General Style](#general-style)
+  - [Classes and Structures](#classes-and-structures)
+  - [Member Data](#member-data)
+  - [Functions and Function Parameters](#functions-and-function-parameters)
+  - [Macros](#macros)
+  - [Enumerations](#enumerations)
+  - [Namespaces](#namespaces)
+  - [Header files](#header-files)
+  - [Deprecations](#deprecations)
+  - [Complete Example](#complete-example)
+- [Extras](#extras)
+  - [Linking to other APIs](#linking-to-other-apis)
+  - [Linking to Other Guides and Sites](#linking-to-other-guides-and-sites)
+  - [See Also](#see-also)
+  - [Notes](#notes)
+  - [Code Snippets](#code-snippets)
+  - [Section Comments](#section-comments)
+- [Excluding code from the documentation](#excluding-code-from-the-documentation)
+- [Exceptions](#exceptions)
+- [As an SDE, can I build the documentation to see the final result?](#as-an-sde-can-i-build-the-documentation-to-see-the-final-result)
 
 ## Scope
 
@@ -87,12 +75,12 @@ In general, we will always follow this style for all documented c/c++ code with 
 
 Use whitespace in your documentation as you see fit to provide maximum readability as long as it does not violate other elements of our Coding Standards.
 
-#### Gotchas
+**Gotchas**:
 
 - Don't include any periods within the brief description (like "e.g.") because Doxygen terminates the brief description at the **first period**.
 - Be sure to place the comment immediately above the thing being documented. Doxygen will attribute documentation to the next element encountered after the documentation comment (including namespaces, class names, macros, etc).
 
-#### Example comments
+**Example comments**:
 
 ```c++
 //! This is the summary of 'bar'.
@@ -115,7 +103,7 @@ For very dense comments (such as those deeply explaining how a function works in
 
 Do not use a same-line comment ( `//!<` ) to document the class's description **itself**.
 
-#### Classes and Structures examples
+**Classes and Structures examples**:
 
 ```c++
 //! One-line description of MyClass.
@@ -129,7 +117,7 @@ class MyClass
 
 ### Member Data
 
-#### Member Data Examples
+**Member Data Examples**:
 
 ```c++
 //! Single-line description.
@@ -154,7 +142,7 @@ int m_var2;
   - For the docs of the function parameters (`@param`), be sure to specify the exact parameter name (case sensitive) so that it matches exactly.
   - If a parameter is unnamed but still requires documentation, use the syntax `@param (Unnamed) brief description.` Doxygen will use the first word after param as the name, and it will thus show up in the document as `(Unnamed)`. If a parameter is relevant enough to require documentation beyond that its just unused, though, perhaps it should have a name!
 
-#### Functions and Function Parameters examples
+**Functions and Function Parameters examples**:
 
 ```c++
 //! Brief description of myFunction ending with a period.
@@ -174,7 +162,7 @@ void exit(int exitCode = 0);
 
 Note that the single line version should only be used if none of the parameters are remarkable or have any information to add, as well as there are no gotchas to return values or any other information a reader needs to know about.
 
-#### Example of redundant information (**don't do this**)
+**Example of redundant information (_don't do this_)**:
 
 Do not add useless redundant information that makes the API header slower to read and understand just for the sake of claiming completeness.
 
@@ -194,7 +182,7 @@ For example, it would have been useful to know that 0 means that there was no er
 - **Gotchas**
   - If your macro is likely to perform multiple expansions or evaluations of expressions, you must note this to the user, as it can generate unexpected code.
 
-#### Macro examples
+**Macro examples**:
 
 ```c++
 //! Brief description of MY_MACRO.
@@ -204,7 +192,7 @@ For example, it would have been useful to know that 0 means that there was no er
 
 ### Enumerations
 
-#### Enumeration examples
+**Enumeration examples**:
 
 ```c++
 //! Brief description of MyEnum.
@@ -228,7 +216,7 @@ You may optionally put a comment that indicates the end of the namespace if a re
   - Do not document the namespace in multiple files. If Doxygen finds more than one doc for the same namespace, it will merge the docs, and you'll end up with duplicate information in the documentation.
   - If the namespace is declared in multiple header files, add the namespace's doc to **one** of those declarations only. If its a very complicated explanation, the other headers can refer to the main one in a normal comment.
 
-#### Namespace examples
+**Namespace examples**:
 
 ```c++
 //! Brief description of MyNamespace.
@@ -249,7 +237,7 @@ Follow the General Style, but use a @file token to indicate its a comment about 
   - Do not put the filename after @file. Leaving the filename blank indicates to Doxygen that the comment applies to the current file. This way, we will not need to change the comment if the filename changes.
   - Forgetting to use @file will apply the documentation to the next piece of code that appears after the comment.
 
-#### Header file examples
+**Header file examples**:
 
 ```c++
 // [Boilerplate copyright notice]

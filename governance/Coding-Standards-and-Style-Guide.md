@@ -1,106 +1,77 @@
-# O3DE C++ Coding Standards
+# O3DE C++ Coding Standards <!-- omit in toc -->
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
-- [O3DE C++ Coding Standards](#o3de-c-coding-standards)
-  - [Table of Contents](#table-of-contents)
-    - [Existing Code](#existing-code)
-  - [Introduction](#introduction)
-    - [How to use this guide](#how-to-use-this-guide)
-    - [Some choices are arbitrary, but still matter](#some-choices-are-arbitrary-but-still-matter)
-    - [Some things are not covered](#some-things-are-not-covered)
-  - [Compiler compatibility](#compiler-compatibility)
-  - [Formatting](#formatting)
-    - [Use four spaces for indentation](#use-four-spaces-for-indentation)
-    - [Apply indentation in a consistent manner](#apply-indentation-in-a-consistent-manner)
-    - [Indenting preprocessor statements](#indenting-preprocessor-statements)
-      - [Indenting preprocessor statements examples](#indenting-preprocessor-statements-examples)
-    - [Comments after preprocessor statements](#comments-after-preprocessor-statements)
-      - [Comments after preprocessor statements examples](#comments-after-preprocessor-statements-examples)
-    - [Positioning of curly braces](#positioning-of-curly-braces)
-      - [Positioning of curly braces examples](#positioning-of-curly-braces-examples)
-    - [Use of curly braces](#use-of-curly-braces)
-      - [Use of curly braces examples](#use-of-curly-braces-examples)
-    - [Single statement per line](#single-statement-per-line)
-      - [Single statement per line examples](#single-statement-per-line-examples)
-    - [Make lines reasonably long](#make-lines-reasonably-long)
-    - [Placement of pointer and address operators in variable declarations](#placement-of-pointer-and-address-operators-in-variable-declarations)
-      - [Placement of pointer and address operators in variable declarations examples](#placement-of-pointer-and-address-operators-in-variable-declarations-examples)
-    - [Naming](#naming)
-    - [In General](#in-general)
-      - [Naming examples](#naming-examples)
-    - [Class Names](#class-names)
-    - [File names](#file-names)
-    - [Type names](#type-names)
-    - [Variable names](#variable-names)
-    - [Constant names](#constant-names)
-      - [Constant names examples](#constant-names-examples)
-    - [Function names](#function-names)
-      - [Function names examples](#function-names-examples)
-    - [Namespace names](#namespace-names)
-      - [Namespace names examples](#namespace-names-examples)
-    - [Enums](#enums)
-      - [Enum examples](#enum-examples)
-    - [Macro names](#macro-names)
-      - [Macro name examples](#macro-name-examples)
-    - [Abbreviations](#abbreviations)
-      - [Abbreviation examples](#abbreviation-examples)
-    - [Out parameter names](#out-parameter-names)
-      - [Out parameter name examples](#out-parameter-name-examples)
-    - [Exceptions to naming rules](#exceptions-to-naming-rules)
-  - [Header Files](#header-files)
-    - [Include guards](#include-guards)
-    - [Include paths](#include-paths)
-    - [Use forward declarations to minimize header file dependencies](#use-forward-declarations-to-minimize-header-file-dependencies)
-    - [Function inlining](#function-inlining)
-      - [Function inlining examples](#function-inlining-examples)
-    - [Minimize code in headers](#minimize-code-in-headers)
-    - [Including headers](#including-headers)
-      - [Including headers examples](#including-headers-examples)
-  - [Classes](#classes)
-    - [Default constructors](#default-constructors)
-    - [Member initialization](#member-initialization)
-    - [Declaration order](#declaration-order)
-    - [Constness](#constness)
-      - [Constness examples](#constness-examples)
-    - [Override](#override)
-    - [Final](#final)
-  - [Scoping](#scoping)
-    - [Namespaces](#namespaces)
-      - [Namespace examples](#namespace-examples)
-    - [Local variables](#local-variables)
-    - [Global variables](#global-variables)
-    - [Code](#code)
-  - [File Structure/Contents](#file-structurecontents)
-    - [Copyright Header Requirements](#copyright-header-requirements)
-    - [Every non 3rd Party source file](#every-non-3rd-party-source-file)
-    - [API definitions](#api-definitions)
-  - [Miscellaneous](#miscellaneous)
-    - [Use `AZ` or `AZStd`](#use-az-or-azstd)
-    - [Use of `auto`](#use-of-auto)
-      - [`auto` examples](#auto-examples)
-      - [`auto` cast examples](#auto-cast-examples)
-    - [Use of nullptr](#use-of-nullptr)
-    - [C++ Exceptions](#c-exceptions)
-    - [RTTI](#rtti)
-    - [Casting](#casting)
-    - [Use of const](#use-of-const)
-    - [Don’t leave disabled code in the source](#dont-leave-disabled-code-in-the-source)
-    - [Visual Studio project filter hierarchy should reflect the actual disk folder hierarchy](#visual-studio-project-filter-hierarchy-should-reflect-the-actual-disk-folder-hierarchy)
-  - [Documentation](#documentation)
-    - [Self-documenting code is better than documenting the code yourself](#self-documenting-code-is-better-than-documenting-the-code-yourself)
-      - [Documentation Examples](#documentation-examples)
-        - [Bad Code – Requires a comment to explain itself](#bad-code--requires-a-comment-to-explain-itself)
-        - [Good Code – Uses names that tell you what you need to know](#good-code--uses-names-that-tell-you-what-you-need-to-know)
-    - [Use full sentences and avoid abbreviations](#use-full-sentences-and-avoid-abbreviations)
-    - [Leave your feelings out of it](#leave-your-feelings-out-of-it)
-    - [Use non-gendered pronouns](#use-non-gendered-pronouns)
-    - [Explaining "why" is often more valuable than "what"](#explaining-why-is-often-more-valuable-than-what)
-    - [Private members need love too](#private-members-need-love-too)
-    - [Redundant documentation is redundant](#redundant-documentation-is-redundant)
-      - [Not useful - it just repeats what the code already says](#not-useful---it-just-repeats-what-the-code-already-says)
-      - [Not useful - non-specific warning may as well not be here](#not-useful---non-specific-warning-may-as-well-not-be-here)
-    - [TODO comments](#todo-comments)
+- [Introduction](#introduction)
+  - [How to use this guide](#how-to-use-this-guide)
+  - [Some choices are arbitrary, but still matter](#some-choices-are-arbitrary-but-still-matter)
+  - [Some things are not covered](#some-things-are-not-covered)
+- [Compiler compatibility](#compiler-compatibility)
+- [Formatting](#formatting)
+  - [Use four spaces for indentation](#use-four-spaces-for-indentation)
+  - [Apply indentation in a consistent manner](#apply-indentation-in-a-consistent-manner)
+  - [Indenting preprocessor statements](#indenting-preprocessor-statements)
+  - [Comments after preprocessor statements](#comments-after-preprocessor-statements)
+  - [Positioning of curly braces](#positioning-of-curly-braces)
+  - [Use of curly braces](#use-of-curly-braces)
+  - [Single statement per line](#single-statement-per-line)
+  - [Make lines reasonably long](#make-lines-reasonably-long)
+  - [Placement of pointer and address operators in variable declarations](#placement-of-pointer-and-address-operators-in-variable-declarations)
+  - [Naming](#naming)
+  - [In General](#in-general)
+  - [Class Names](#class-names)
+  - [File names](#file-names)
+  - [Type names](#type-names)
+  - [Variable names](#variable-names)
+  - [Constant names](#constant-names)
+  - [Function names](#function-names)
+  - [Namespace names](#namespace-names)
+  - [Enums](#enums)
+  - [Macro names](#macro-names)
+  - [Abbreviations](#abbreviations)
+  - [Out parameter names](#out-parameter-names)
+  - [Exceptions to naming rules](#exceptions-to-naming-rules)
+- [Header Files](#header-files)
+  - [Include guards](#include-guards)
+  - [Include paths](#include-paths)
+  - [Use forward declarations to minimize header file dependencies](#use-forward-declarations-to-minimize-header-file-dependencies)
+  - [Function inlining](#function-inlining)
+  - [Minimize code in headers](#minimize-code-in-headers)
+  - [Including headers](#including-headers)
+- [Classes](#classes)
+  - [Default constructors](#default-constructors)
+  - [Member initialization](#member-initialization)
+  - [Declaration order](#declaration-order)
+  - [Constness](#constness)
+  - [Override](#override)
+  - [Final](#final)
+- [Scoping](#scoping)
+  - [Namespaces](#namespaces)
+  - [Local variables](#local-variables)
+  - [Global variables](#global-variables)
+  - [Code](#code)
+- [File Structure/Contents](#file-structurecontents)
+  - [Copyright Header Requirements](#copyright-header-requirements)
+  - [API definitions](#api-definitions)
+- [Miscellaneous](#miscellaneous)
+  - [Use `AZ` or `AZStd`](#use-az-or-azstd)
+  - [Use of `auto`](#use-of-auto)
+  - [Use of nullptr](#use-of-nullptr)
+  - [C++ Exceptions](#c-exceptions)
+  - [RTTI](#rtti)
+  - [Casting](#casting)
+  - [Use of const](#use-of-const)
+  - [Don’t leave disabled code in the source](#dont-leave-disabled-code-in-the-source)
+  - [Visual Studio project filter hierarchy should reflect the actual disk folder hierarchy](#visual-studio-project-filter-hierarchy-should-reflect-the-actual-disk-folder-hierarchy)
+- [Documentation](#documentation)
+  - [Self-documenting code is better than documenting the code yourself](#self-documenting-code-is-better-than-documenting-the-code-yourself)
+  - [Use full sentences and avoid abbreviations](#use-full-sentences-and-avoid-abbreviations)
+  - [Leave your feelings out of it](#leave-your-feelings-out-of-it)
+  - [Use non-gendered pronouns](#use-non-gendered-pronouns)
+  - [Explaining "why" is often more valuable than "what"](#explaining-why-is-often-more-valuable-than-what)
+  - [Private members need love too](#private-members-need-love-too)
+  - [Redundant documentation is redundant](#redundant-documentation-is-redundant)
+  - [TODO comments](#todo-comments)
 
 > This style guide does not, and possibly cannot, cover every possible coding situation. If you have something that you think should, or should not, be in the standard please [bring it up with sig-core in the discord channel for discussion](https://discord.gg/fZ7CDwDxrh). It's up to everyone to make sure that this document remains accurate and useful.
 
@@ -224,7 +195,7 @@ int a = 10;
 
 `clang-format`: This is not currently enforced by the `clang-format` settings but is supported - indentation of preprocessor statements is left unchanged.
 
-#### Indenting preprocessor statements examples
+**Indenting preprocessor statements examples**:
 
 ```c++
 // Fairly obvious
@@ -285,7 +256,7 @@ void foo()
 
 **Reason**: This is purely for ease of reading.
 
-#### Comments after preprocessor statements examples
+**Comments after preprocessor statements examples**:
 
 This comment after the `#endif` is not necessary:
 
@@ -313,7 +284,7 @@ These comments help readability:
 
 `clang-format`: Will automatically format to these guidelines.
 
-#### Positioning of curly braces examples
+**Positioning of curly braces examples**:
 
 ```c++
 void GoodFunction()
@@ -344,7 +315,7 @@ class IncorrectClass {
 
 `clang-format`: Will automatically format to these guidelines
 
-#### Use of curly braces examples
+**Use of curly braces examples**:
 
 ```c++
 // Unacceptable: Naked if/else/while/do/for etc...
@@ -366,7 +337,7 @@ if(foo)
 
 `clang-format`: Will automatically format to these guidelines
 
-#### Single statement per line examples
+**Single statement per line examples**:
 
 ```c++
 // Unacceptable: Single line if statements
@@ -440,7 +411,7 @@ bar();
 
 `clang-format`: Will automatically format to these guidelines
 
-#### Placement of pointer and address operators in variable declarations examples
+**Placement of pointer and address operators in variable declarations examples**:
 
 ```c++
 void* buffer; // Ok
@@ -471,7 +442,7 @@ const char * const * buffer; // Not Ok
 
 **Required**: Do not let your names become misleading! Think carefully about what a name represents and what expectations it carries before using it. If the thing you're naming evolves out of its original usage, then strongly consider renaming it.
 
-#### Naming examples
+**Naming examples**:
 
 ```c++
 Matrix m_position;
@@ -569,7 +540,7 @@ Variables declared `constexpr` or `const`, and **whose value is fixed for the d
 
 **Optional**: Constants of other storage classes, e.g. local variables, can be named this way, otherwise the usual variable naming rules apply.
 
-#### Constant names examples
+**Constant names examples**:
 
 ```c++
 class MyClass : public AZ::EBusTraits
@@ -618,7 +589,7 @@ NOTE: This includes RPCs or public functors on a structure. These are supposed t
 - If the function only modifies a member variable, we do recommend using the `GetX`/`SetX` naming pattern.
   - When one function operates on an object and another function just returns a copy of it, we recommend naming the functions differently. A `Get` prefix is recommended on the function that returns a copy.
 
-#### Function names examples
+**Function names examples**:
 
 ```c++
 // These accessors are not recommended, because the identical naming can lead to subtle bugs.
@@ -642,7 +613,7 @@ Vector GetNormalized() const;
 
 **Recommended**: Add the name of the namespace as a comment after the closing brace of a namespace.
 
-#### Namespace names examples
+**Namespace names examples**:
 
 ```c++
 namespace O3DE
@@ -668,7 +639,7 @@ namespace O3DE
 
 **Reason**: Unscoped enums can be accessed directly without including the enum name, so the prefixing reduces the chance of name clashes, and helps code assistance tools like Intellisense or VisualAssist display more useful suggestions by keeping related flags grouped. For scoped enums prefixing is not needed as you need to refer to the enum before accessing its members.
 
-#### Enum examples
+**Enum examples**:
 
 ```c++
 struct MyData
@@ -721,7 +692,7 @@ enum class AssetStatus
 
 **Recommended**: Use macros as a last resort. Seriously! They're bug prone and difficult to debug.
 
-#### Macro name examples
+**Macro name examples**:
 
 ```c++
 #define AZ_ASSERT  ...
@@ -741,7 +712,7 @@ The second big pitfall is with macro expansion and its safety. There are many do
 
 **Reason**: Treating abbreviated words, company names and product names in the same uniform way as the other naming conventions means no additional rules have to be added.
 
-#### Abbreviation examples
+**Abbreviation examples**:
 
 | Valid                        | Invalid                      |
 | ---------------------------- | ---------------------------- |
@@ -770,7 +741,7 @@ In this case the name inputOutputPoints does enhance the readability of the code
 
 **Related**: If the function call is part of a public API it is possible to document the out parameter using Doxygen. This practice is encouraged.
 
-#### Out parameter name examples
+**Out parameter name examples**:
 
 ```c++
 // Not idiomatic
@@ -836,7 +807,7 @@ Do not use `__forceinline` or any other inline hinting. Use the `inline` keyword
 
 **Reason**: Inlining must be left to the compiler. In all experiments without our codebase, force-inlined code was demonstrably more instructions and equal or worse performance. Force inlining reduces the tools the compiler can use to reason about the code and optimize it.
 
-#### Function inlining examples
+**Function inlining examples**:
 
 ```c++
 // In these trivial cases the compiler will output the same code
@@ -880,7 +851,7 @@ Notice the use of angle brackets, and the inclusion of the package name. For thi
 .../PackageRoot/includes/PackageName/SomeFile.h // <- a file at this location.../PackageRoot/includes // <- is part of a package given to the compiler this way#include <PackageName/SomeFile.h> // <- and included with this statement
 ```
 
-#### Including headers examples
+**Including headers examples**:
 
 ```c++
 // Correct
@@ -915,7 +886,7 @@ Notice the use of angle brackets, and the inclusion of the package name. For thi
     - Exception: Feel free to const parameters in the definition of a function (e.g. in the cpp file). This will be more semantically clear to someone reading the implementation later.
   - Do not mark a function as const if it is const-broken, that is if it returns a non-const pointer or reference to another object.
 
-#### Constness examples
+**Constness examples**:
 
 ```c++
 // Unacceptable: Accessor member function should be const since it doesn't change the state of the object
@@ -983,7 +954,7 @@ class MyClass
 
 **Optional**: Use type aliases in the `private` section of a class to reduce long type names without impacting users. Use of namespace aliases are permitted to allow partially qualified names (please see examples).
 
-#### Namespace examples
+**Namespace examples**:
 
 ```c++
 // .h (aside: C++17 nested namespaces for brevity)
@@ -1070,7 +1041,7 @@ Within Gems: [Gems System Documentation](https://o3de.org/docs/user-guide/gems/
 **Required**: For non-3rd Party source files that are apart of the O3DE project, they are required to carry the copyright notice detailed on the [Copyright Header Requirements](#every-non-3rd-party-source-file) page.
 When adding a new source file or modifying any existing O3DE source file without a copyright please add the following copyright notice to the top of the file.
 
-### Every non 3rd Party source file
+**Every non 3rd Party source file**:
 
 ```c++
 /*
@@ -1110,7 +1081,7 @@ This is one of the harder standards topics to address objectively, since what is
 
 The following examples cover some common scenarios for illustrative purposes; for other situations some burden is placed on developers and reviewers to consider if the use-case is appropriate under these guidelines.
 
-#### `auto` examples
+**`auto` examples**:
 
 ```c++
 // Using auto for literal assignment is portable and safe – The compiler
@@ -1207,7 +1178,7 @@ for (const auto& element : m_pairs)
 
 **Recommended usage**: In the case of casts, `auto` is preferred on the left side of the expression to remove redundant type information.
 
-#### `auto` cast examples
+**`auto` cast examples**:
 
 ```c++
 AZ::SerializeContext* serialize = azrtti_cast<AZ::SerializeContext*>(context);
@@ -1286,16 +1257,16 @@ We use [Doxygen](http://www.stack.nl/~dimitri/doxygen/index.html) markup when 
 
 **Recommended**: Try to be specific. Your first priority should be to give good names to everything in the code
 
-#### Documentation Examples
+**Documentation Examples:**
 
-##### Bad Code – Requires a comment to explain itself
+**Bad Code – Requires a comment to explain itself**:
 
 ```c++
 //! Gets the size of the object in bytes.
 int  Size() { return m_size; }
 ```
 
-##### Good Code – Uses names that tell you what you need to know
+**Good Code – Uses names that tell you what you need to know**:
 
 ```c++
 int GetByteSize() { return m_byteSize; }
@@ -1327,14 +1298,14 @@ See [https://chromium.googlesource.com/chromium/src/+/master/styleguide/gender_
 
 **Recommended**: Documentation should always add value. If the documentation adds nothing there is no reason to include it
 
-#### Not useful - it just repeats what the code already says
+**Not useful - it just repeats what the code already says**:
 
 ```c++
 // Iterates through the player list
 for (int i=0; i<players.size(); ++i) { ... }
 ```
 
-#### Not useful - non-specific warning may as well not be here
+**Not useful - non-specific warning may as well not be here**:
 
 ```c++
 // This will assert if the state is not correct

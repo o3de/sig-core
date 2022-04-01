@@ -24,7 +24,15 @@ Below is a list of all prior completed meetings and related resources.
 
 | No   | Date       | Time | Agenda  | Media | Notes | Resources |
 | ---- | ---------- | ---- | ------- | ----- | ----- | ---- |
-| 0001 | 2021-00-00 | 0000 UTC | n/a | n/a | Link | Link |
+| 0001 | 2021-06-10 | 2000 UTC | https://github.com/o3de/sig-core/issues/1 | n/a | [Meeting Notes](https://github.com/o3de/sig-core/blob/main/meetings/notes/SIG-Core%20meeting%20-%202021-06-10.md) | Link |
+| 0002 | 2021-06-28 | 1730 UTC | https://github.com/o3de/sig-core/issues/6 | n/a | Link | Link |
+| 0003 | 2021-07-21 | 1600 UTC | https://github.com/o3de/sig-core/issues/8 | n/a | [Meeting Notes](https://github.com/o3de/sig-core/blob/main/meetings/notes/SIG-Core-Notes%20-%202021-JUL-21.md) | Link |
+| 0004 | 2021-10-15 | 1600 UTC | https://github.com/o3de/sig-core/issues/13 | n/a | [Meeting Notes](https://github.com/o3de/sig-core/blob/main/meetings/notes/SIG-Core-Notes%20-%202021-OCT-15.md) | Link |
+| 0005 | 2021-12-02 | 1700 UTC | https://github.com/o3de/sig-core/issues/20 | n/a | Link | Link |
+| 0006 | 2022-01-27 | 1700 UTC | https://github.com/o3de/sig-core/issues/25 | n/a | Link | Link |
+| 0007 | 2022-02-09 | 1700 UTC | https://github.com/o3de/sig-core/issues/26 | n/a | Link | Link |
+| 0008 | 2022-03-04 | 1700 UTC | https://github.com/o3de/sig-core/issues/29 | n/a | Link | Link |
+| 0009 | 2022-04-01 | 1600 UTC | https://github.com/o3de/sig-core/issues/30 | n/a | [Meeting Notes](https://github.com/o3de/sig-core/blob/main/meetings/notes/SIG-Core-Notes%20-%202022-APR-1.md) | Link |
 
 # General Resources
 

@@ -320,7 +320,7 @@ void PrintString()
 
 ### Tracing
 
-**Required**: Use `AZ_*` tracing macros for all code tracing needs. For custom type tracing (tools, etc.) or something that needs to be active in release, please create a [Request For Comment (RFC)](https://github.com/o3de/sig-core/issues/new/choose) document detailing the reasons for custom tracking to facilitate feedback from other developers.
+**Required**: Use `AZ` tracing macros (e.g. `AZ_Printf`, `AZ_TracePrintf`, `AZ_Warning`, `AZ_Error` etc.) for all code tracing needs (see `Framework/AzCore/AzCore/Debug/Trace.h` for more details). For custom type tracing (tools, etc.) or something that needs to be active in release, please create a [Request For Comment (RFC)](https://github.com/o3de/sig-core/issues/new/choose) document detailing the reasons for custom tracking to facilitate feedback from other developers.
 
 **Reason**: Error handling and tracing functions are an important part of the development process used to provide friendly formatted messages to developers and designers about what errors are occurring and why. The tracing functions indicate where in code they are logged from to allow debugging.
 

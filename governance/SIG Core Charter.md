@@ -33,11 +33,9 @@ Two concise lines explaining what this SIG does with bullet points of the major 
 * Maintain Prefab system 
 * Maintain Core system libraries AZCore, and AZFramework libraries
 * Maintain Editor python bindings framework
-* Maintain Physics API, and integration of physics related gems
-* Maintain EmotionFX and Animation systems 
 * Maintain Logging and Trace systems and frameworks
 
-* Publish and maintain list of use case examples for each subssystem of AZCore. 
+* Publish and maintain list of use case examples for each subsystem of AZCore. 
 
 # Generalized overall scope of work 
 
@@ -49,7 +47,8 @@ Two concise lines explaining what this SIG does with bullet points of the major 
 * Support and collaborate with all SIGs in relation to changed and updates to underlying frameworks 
 * Publish procedure for the intake of requests from SIGs in relation to changes and needs to core systems
 * Provide consultation, discovery, and guidance for new feature support brought forth by other SIGs
-* Publish and matinain best practices, usability examples, and feature documentation.
+* Publish and maintain best practices, usability examples, and feature documentation.
+* Collaborate with SIG-Simulation for updates to core Math library and Tick System
 
 
 ## Out of Scope ##
@@ -67,7 +66,7 @@ Two concise lines explaining what this SIG does with bullet points of the major 
 
 # Roles and Organization Management 
 
-SIG Docs adheres to the standards for roles and organization management as specified by <sig-governance>. This SIG opts in to updates and modifications to <sig-governance>
+SIG-Core adheres to the standards for roles and organization management as specified by <sig-governance>. This SIG opts in to updates and modifications to <sig-governance>
 
 ## Individual Contributors 
 Must provide a report of performance and blast radius impact of direct and indirectly affected systems
@@ -87,6 +86,6 @@ Additional information not found in the sig-governance related to SIG Chairs
 Additional information not found in the sig-governance related to subproject creation
 
 ## Deviations from sig-governance 
-SIG will elect 4 Chairmembers due to vast interaction across all SIGs
+None
 
 ## Explicit Deviations from the sig-governance 

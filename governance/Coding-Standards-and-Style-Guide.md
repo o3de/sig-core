@@ -311,7 +311,7 @@ class IncorrectClass {
 
 **Required**: Always use braces for flow control statements
 
-**Reason**: Control statements like if-else, while, for and do used without braces can lead to serious unintentional coding errors where statements execute at the wrong scope or in the wrong order (e.g. [CVE-2014-1266](http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-1266). Additionally, consider that auto-merges exist, and do not have the context to guess how to merge single statement blocks.
+**Reason**: Control statements like if-else, while, for and do used without braces can lead to serious unintentional coding errors where statements execute at the wrong scope or in the wrong order (e.g. [CVE-2014-1266](http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-1266)). Additionally, consider that auto-merges exist, and do not have the context to guess how to merge single statement blocks.
 
 `clang-format`: Will automatically format to these guidelines
 
@@ -704,7 +704,7 @@ The first one is name clashing: Macros are always in the global namespace, so yo
 
 Reserving a common name like "Assert" without a prefix is very bad, as you are likely to also have functions named "Assert". Such issues are hard to debug, as very often there will be no compile error.
 
-The second big pitfall is with macro expansion and its safety. There are many documents online that discuss that issue, so please be familiar with them before deciding to use a macro in LY.
+The second big pitfall is with macro expansion and its safety. There are many documents online that discuss that issue, so please be familiar with them before deciding to use a macro in O3DE.
 
 ### Abbreviations
 

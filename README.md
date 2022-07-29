@@ -15,7 +15,7 @@ We manage the Core Systems needed by O3DE and its libraries to fulfill the engin
 
 ## What the SIG does:
 
-* Contributes to changes to O3DE Core Systems in library(AzCore/AzFramework/AzToolsFramework/AzGameFramework).  
+* Contributes changes to O3DE Core Systems in the libraries of AzCore, AzFramework, AzToolsFramework, etc...  
 * Collaborate with SIG-Simulation for changes to the Math library and Tick System. 
 * Collaborate with SIG-Platform for implementation of low level systems(memory management, keyboard/mouse input, file input/output, etc...).  
 * Maintains the Gem System and integrations with CMake.  

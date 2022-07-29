@@ -11,7 +11,7 @@ Meeting notes from the [O3DE Meetings](https://o3de.github.io/sig-core/meetings/
 This repository holds materials for the Open 3D Engine Foundation Special Interest Group for Core Systems (SIG-Core).
 
 ## Description of SIG Core
-We manage the Core Systems needed by O3DE libraries to fulfill the engines requirements. Primarily low-level systems such as memory management, application startup and file input/output are implemented by. See the [SIG's charter](governance/SIG%20Core%20Charter.md) for full details.
+We manage the Core Systems needed by O3DE and its libraries to fulfill the engines requirements. The SIG primarily owns low-level systems such as memory management, application startup and file input/output. See the [SIG's charter](governance/SIG%20Core%20Charter.md) for full details.
 
 ## What the SIG does:
 

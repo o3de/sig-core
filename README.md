@@ -43,5 +43,6 @@ O3DE cannot work without the help and input from as many of its community member
 * [SIG-Core Charter](governance/SIG%20Core%20Charter.md)
 * [Open Issues](issues?q=is%3Aissue+is%3Aopen+label%3Amtg-agenda)
 * [Full table of previous meetings](meetings?id=previous-meetings) is available here.
+* [SIG-Core Triage Guide](governance/TRIAGE_GUIDE.md)
 
 Some of this guide was influenced by the [SIG-Network Readme](https://github.com/o3de/sig-network/blob/main/README.md). Thanks to the contributors there.

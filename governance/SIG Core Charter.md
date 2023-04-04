@@ -66,26 +66,26 @@ Two concise lines explaining what this SIG does with bullet points of the major 
 
 # Roles and Organization Management 
 
-SIG-Core adheres to the standards for roles and organization management as specified by <sig-governance>. This SIG opts in to updates and modifications to <sig-governance>
+SIG-Core adheres to the standards for roles and organization management as specified by [SIG-Governance](https://github.com/o3de/community/tree/main/sigs). This SIG opts in to updates and modifications to [SIG-Governance](https://github.com/o3de/community/tree/main/sigs)
 
 ## Individual Contributors 
 Must provide a report of performance and blast radius impact of direct and indirectly affected systems
 
-Additional information not found in the sig-governance related to contributors.
+Additional information not found in the [sig-governance](https://github.com/o3de/community/tree/main/sigs) related to contributors.
 
 ## Maintainers 
  
-Additional information not found in the sig-governance related to contributors
+Additional information not found in the [sig-governance](https://github.com/o3de/community/tree/main/sigs) related to contributors
 
 ## Additional responsibilities of Chairs 
 
-Additional information not found in the sig-governance related to SIG Chairs
+Additional information not found in the [sig-governance](https://github.com/o3de/community/tree/main/sigs) related to SIG Chairs
 
 ## Subproject Creation 
 
-Additional information not found in the sig-governance related to subproject creation
+Additional information not found in the [sig-governance](https://github.com/o3de/community/tree/main/sigs) related to subproject creation
 
-## Deviations from sig-governance 
+## Deviations from [sig-governance](https://github.com/o3de/community/tree/main/sigs) 
 None
 
-## Explicit Deviations from the sig-governance 
+## Explicit Deviations from the [sig-governance](https://github.com/o3de/community/tree/main/sigs) 

@@ -1,19 +1,22 @@
 # SIG Core Charter 
 
-This charter adheres to the Roles and Organization Management specified in "<sig-governance.md>".
+This charter adheres to the Roles and Organization Management specified in "[sig-governance.md](https://github.com/o3de/community/tree/main/sigs)".
 
-Team information may be found in the "<readme.md>"
+Team information may be found in the "[README.md](https://github.com/o3de/sig-core/blob/main/README.md)"
 
 # Overview of SIG #
 
 Two concise lines explaining what this SIG does with bullet points of the major responsibilities
 
-- Responsibility 1
+- Maintains and updates Core O3DE Systems: Gem (Plugin System), Serialization, Engine Initialization and Configuration, Settings,
+- Provides Memory Allocator Framework and Metrics Logging system
 
 # Goals #
 
-
-- Major goals that SIG seeks to generally achieve
+- Extend the Gem (Modular Framework) plugin system which allows developers to easily add libraries/applications into O3DE
+- Reduce Developer Iteration Time through better organization of code through the Gem and Project Templates
+   - Provide framework via the o3de template system as well as guidance on to properly separate public API vs private implementation to help reduce build times
+ - Gather performance metrics on Core Applications' startup to come with a strategy to improve runtime performance(Reduce launch time to enter Editor, reduce assets loading time)
 
 # Scope 
 
